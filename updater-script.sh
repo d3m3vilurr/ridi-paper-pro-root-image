@@ -80,11 +80,10 @@ adb shell cp /system/bin/unzip /sbin
 adb shell mkdir /tmp/supersu
 adb shell unzip /sdcard/supersu-2.79.zip META-INF/* -d /tmp/supersu
 adb shell busybox sh /tmp/supersu/META-INF/com/google/android/update-binary dummy 1 /sdcard/supersu-2.79.zip
-adb
 
 echo "Remove used files"
 adb shell rm /sdcard/*.rooted.img
 adb shell rm /sdcard/supersu-2.79.zip
 
 echo "Installation complete!"
-adb shell reboot
+adb reboot
