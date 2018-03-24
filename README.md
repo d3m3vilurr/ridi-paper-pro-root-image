@@ -36,6 +36,7 @@ Then follow remain steps
 $ bash updater-script.sh
 ```
 
+## After steps
 If you first time use this rooting method, please run this.
 
 ```
@@ -56,3 +57,12 @@ another remap tool.
 ```bash
 $ adb shell input keyevent 4
 ```
+
+Also you can refresh screen manually using [epdblk][epdblk]. It should have compatibility with
+[RefreshPie][RefreshPie]. (But I'm not use this tool anymore)
+
+If you want to bind key, use [Tasker][tasker] and bind shortcut to Xposed Additions
+
+[epdblk]: https://github.com/d3m3vilurr/epdblk
+[RefreshPie]: https://github.com/ztoday21/refreshPie
+[tasker]: https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm
