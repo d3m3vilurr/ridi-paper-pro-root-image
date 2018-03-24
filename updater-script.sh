@@ -23,6 +23,11 @@ cd $ROOT
 echo "Enable adb"
 sed -i -- s/persist.sys.usb.config=.\*/persist.sys.usb.config=mtp,adb/ target/boot/ramdisk/default.prop
 
+echo "Add privilege into framebuffer"
+sed -i -- "s/\(\/dev\/graphics\/\*.*\)[0-9]\{4\}/\10666/" target/boot/ramdisk/ueventd.rc
+sed -i -- "s/\(\/dev\/graphics\/fb.*\)[0-9]\{4\}/\10666/" target/boot/ramdisk/ueventd.E70Q10.rc
+sed -i -- "s/\(\/dev\/graphics\/fb.*\)[0-9]\{4\}/\10666/" target/boot/ramdisk/ueventd.freescale.rc
+
 echo "Rebuild boot"
 cd target/boot/ramdisk
 find . | cpio --create --format='newc' | gzip > ../mod_ramdisk.img
