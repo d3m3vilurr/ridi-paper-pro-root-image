@@ -55,6 +55,10 @@ echo "Copying files..."
 sudo cp -r overlay/* target/system
 sync
 
+echo "Enable media service..."
+sudo sed -i -- "s/config.disable_media=true/config.disable_media=false/" target/system/build.prop
+sync
+
 # TODO fixme app theme light
 
 echo "Disk usage..."
