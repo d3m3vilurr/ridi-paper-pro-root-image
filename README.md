@@ -67,7 +67,7 @@ If you want to bind key, use [Tasker][tasker] and bind shortcut to Xposed Additi
 [RefreshPie]: https://github.com/ztoday21/refreshPie
 [tasker]: https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm
 
-## App lists for 2024
+## App lists & Tips for 2024
 recently (20240714), I updated my paper pro firmware to 1.6.4p with factory reset.
 stupidly, I didn't backup my apps, it makes more time to ready for reading the book.
 
@@ -106,3 +106,13 @@ but this chain is still convenience and useful.
 [udn]: https://xdaforums.com/t/app-4-0-ultimate-dynamic-navbar.2270198/
 [xposed_add_source]: https://github.com/SpazeDog/xposed-additions
 [tasker-appfactory]: https://play.google.com/store/apps/details?id=net.dinglisch.android.appfactory&hl=en
+
+### Remove default keyboard
+after the setting of the new custom keyboard app, remove or rename `com.halbae87.koreanbasicime.apk`
+
+```
+adb shell
+su
+mount -o remount,rw /system
+mv /system/bin/com.halbae87.koreanbasicime.apk /system/bin/com.halbae87.koreanbasicime.apk.bak
+```
